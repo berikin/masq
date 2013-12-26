@@ -22,7 +22,7 @@ es:
   passwort: Clave
   my_password: Mi clave
   old_password: Antigua clave
-  new_password_minimum_6_characters: Nueva clave <span class="note">(el tamaño minimo son 6 caracteres)</span>
+  new_password_minimum_8_characters: Nueva clave <span class="note">(el tamaño minimo son 8 caracteres)</span>
   password_confirmation: Confirmación de la clave
   submit_update: actualizar
   my_yubikey: Mi Yubikey
@@ -34,7 +34,7 @@ es:
   your_yubikey_a_one_time_password: Tu Yubikey <span class="note">(Yubico one time password)</span>
   associate_account_with_yubikey: asociar mi cuenta con esta Yubikey
   disable_my_account: Desactivar mi cuenta
-  wont_be_possible_to_reclaim_identifier: Por favor considera que no podrás recuperartu identificación OpenID
+  wont_be_possible_to_reclaim_identifier: Por favor considera que no podrás recuperar tu identificación OpenID
   confirm_by_entering_password: Confirma este paso ingresando tu clave.
   delete_my_account_and_data: borrar mi cuenta y mis datos.
 
@@ -132,7 +132,7 @@ es:
   instant_messaging: Mensagería Instantanea
   other_information: Otra información
 
-  nickname: Seudonimo
+  nickname: Seudónimo
   email: Correo Electrónico
   address: Dirección
   postcode: Código Postal
@@ -142,6 +142,8 @@ es:
   language: Idioma
   timezone: Zona horaria
   gender: Sexo
+  gender_male: Hombre
+  gender_female: Mujer
   company_name: Compañía
   job_title: Posición
   phone_home: Teléfono hogar
@@ -183,7 +185,7 @@ es:
   create_a_new_persona_title: Crear una nueva persona
 
   # sessions controller
-  you_are_logged_in: Ahora estás ingresado.
+  you_are_logged_in: Ahora estás dentro.
   login_incorrect_or_account_not_yet_activated: El usuario es incorrecto o la cuenta no ha sido activada todavía.
   login_incorrect: El usuario es incorrecto.
   you_are_now_logged_out: Has salido.
@@ -251,3 +253,11 @@ es:
   account_associated_with_yubico_identity: Tu cuenta se a asociado con tu identidad Yubico.
   sorry_yubico_one_time_password_incorrect: "Lo sentimos, la clave de un solo uso Yubico es incorrecta."
   account_disassociated_from_yubico_identity: Tu cuenta se a desasociado de la identidad Yubico.
+
+  #customizations
+  opendraft_designed: Diseñado para OpenDraft
+  masq_fork: Fork de masq
+  jimenezfrontend: Por José Antonio Yáñez jiménez
+  month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+  abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+

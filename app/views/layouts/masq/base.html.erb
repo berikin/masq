@@ -12,59 +12,74 @@
     <link rel="seatbelt.config" type="application/xml" href="<%= seatbelt_config_url(:format => :xml, :protocol => scheme) %>" />
     <link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/ico" />
-    <%= stylesheet_link_tag 'masq/application' %>
+    <%= stylesheet_link_tag 'bootstrap/bootstrap.min' %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <div id="head">
+  <body data-spy="scroll">
+    <div class="page-header">
       <div class="wrap">
-        <h1><%= link_to Masq::Engine.config.masq['name'], root_path %></h1>
-        <ul id="navi">
-        <% if logged_in? %>
-          <% unless checkid_request %>
-          <%= nav t(:my_identity), identity_path(current_account), 'accounts' => ['show'] %>
-          <%= nav t(:my_profile), edit_account_path, 'accounts' => ['edit', 'update'] %>
-          <%= nav t(:my_personas), account_personas_path, 'personas' => [] %>
-          <%= nav t(:my_trusted_sites), account_sites_path, 'sites' => [] %>
-          <% if not auth_type_used == :basic %>
-            <%= nav t(:logout), logout_path %>
-          <% end %>
-          <% else %>
-          <%= nav t(:current_verification_request), proceed_path, 'server' => [] %>
-          <% end %>
-        <% else %>
-          <%= nav t(:login_link), login_path, 'sessions' => ['new', 'create'] %>
-          <% unless Masq::Engine.config.masq['disable_registration'] %>
-            <%= nav t(:signup_link), new_account_path, 'accounts' => ['new', 'create'] %>
-          <% end %>
-          <%= nav t(:help), help_path, 'info' => ['help'] %>
-        <% end %>
-        </ul>
+        <h1><%= link_to Masq::Engine.config.masq['name'], root_path %> <small><%= t(:opendraft_designed) %></small></h1>
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <ul class="nav navbar-nav">
+              <% if logged_in? %>
+                <% unless checkid_request %>
+                <%= nav t(:my_identity), identity_path(current_account), 'accounts' => ['show'] %>
+                <%= nav t(:my_profile), edit_account_path, 'accounts' => ['edit', 'update'] %>
+                <%= nav t(:my_personas), account_personas_path, 'personas' => [] %>
+                <%= nav t(:my_trusted_sites), account_sites_path, 'sites' => [] %>
+                <% if not auth_type_used == :basic %>
+                  <%= nav t(:logout), logout_path %>
+                <% end %>
+                <% else %>
+                <%= nav t(:current_verification_request), proceed_path, 'server' => [] %>
+                <% end %>
+              <% else %>
+                <%= nav t(:login_link), login_path, 'sessions' => ['new', 'create'] %>
+                <% unless Masq::Engine.config.masq['disable_registration'] %>
+                  <%= nav t(:signup_link), new_account_path, 'accounts' => ['new', 'create'] %>
+                <% end %>
+                <%= nav t(:help), help_path, 'info' => ['help'] %>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
       </div>
     </div>
-    <div id="main">
-      <div class="wrap">
-        <% if flash[:notice] %><div class="notice"><%=simple_format h(flash[:notice]) %></div><% end %>
-        <% if flash[:alert] %>
-      <div class="error">
-        <%=simple_format h(flash[:alert]) %>
+    <div class="container" style="margin-bottom: 60px;">
+      <div class="row">
+        <div class="col-md-11">
+          <% if flash[:notice] %><div class="notice"><%=simple_format h(flash[:notice]) %></div><% end %>
+          <% if flash[:alert] %>
+            <div class="error">
+              <%=simple_format h(flash[:alert]) %>
 
-        <% unless params[:resend_activation_for].blank? -%>
-          <%= button_to t(:resend_activation_email), resend_activation_email_path(:account => params[:resend_activation_for]) -%>
-        <%- end %>
-      </div>
-    <% end %>
-        <%= yield %>
+              <% unless params[:resend_activation_for].blank? -%>
+                 <%= button_to t(:resend_activation_email), resend_activation_email_path(:account => params[:resend_activation_for]) -%>
+              <%- end %>
+            </div>
+          <% end %>
+          <%= yield %>
+        </div>
       </div>
     </div>
-    <div id="foot">
-      <div class="wrap">
-        <span class="note">
-          powered by <%= link_to 'masq', 'https://github.com/dennisreimann/masq' %>
-          and <%= link_to image_tag('masq/openid_symbol.png') + " OpenID", 'http://openid.net/' %> |
+    <div id="footer" class="container">
+      <nav class="navbar navbar-default navbar-fixed-bottom">
+        </br />
+        <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-2 text-center">
+          <%= link_to t(:masq_fork), 'https://github.com/dennisreimann/masq' %>
+        </div>
+        <div class="col-md-2 text-center">
+          <%= link_to t(:jimenezfrontend), 'http://www.jimenezfrontend.es' %>
+        </div>
+        <div class="col-md-2 text-center">
+          <%= link_to image_tag('masq/openid_symbol.png') + " OpenID", 'http://openid.net/' %>
+        </div>
+        <div class="col-md-2 text-center">
           <%= link_to t(:get_help), help_path %>
-        </span>
-      </div>
+        </div>
+      </nav>
     </div>
   </body>
 </html>

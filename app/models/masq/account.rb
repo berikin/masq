@@ -15,7 +15,7 @@ module Masq
     validates_format_of :email, :with => /(\A([^@\s]+)@((?:[-_a-z0-9]+\.)+[a-z]{2,})\z)/i, :allow_blank => true
     validates_presence_of :password, :if => :password_required?
     validates_presence_of :password_confirmation, :if => :password_required?
-    validates_length_of :password, :within => 6..40, :if => :password_required?
+    validates_length_of :password, :within => 8..40, :if => :password_required?
     validates_confirmation_of :password, :if => :password_required?
     # check `rake routes' for whether this list is still complete when routes are changed
     validates_exclusion_of :login, :in => %w[account session password help safe-login forgot_password reset_password login logout server consumer]

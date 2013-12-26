@@ -24,7 +24,7 @@ en:
   password: Password
   my_password: My password
   old_password: Old password
-  new_password_minimum_6_characters: New password <span class="note">(minimum length is 6 characters)</span>
+  new_password_minimum_8_characters: New password <span class="note">(minimum length is 8 characters)</span>
   password_confirmation: Password confirmation
   submit_update: update
   my_yubikey: My Yubikey
@@ -154,6 +154,8 @@ en:
   language: Language
   timezone: Timezone
   gender: Gender
+  gender_male: Male
+  gender_female: Female
   company_name: Company name
   job_title: Job title
   phone_home: Phone home
@@ -270,3 +272,10 @@ en:
   account_associated_with_yubico_identity: Your account has been associated with your Yubico identity.
   sorry_yubico_one_time_password_incorrect: Sorry, the given Yubico one time password is incorrect.
   account_disassociated_from_yubico_identity: Your account has been disassociated from the Yubico identity.
+
+  #customizations
+  opendraft_designed: Designed for OpenDraft
+  masq_fork: Masq fork
+  jimenezfrontend: José Antonio Yáñez jiménez
+  month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+  abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
