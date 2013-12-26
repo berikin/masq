@@ -3,21 +3,26 @@
 <%= error_messages_for site %>
 
 <%= form_for site, :url => account_site_path(site), :method => :put do |f| %>
-  <div class="row space">
-    <%= f.label :persona_id, t(:persona_label) %>
-    <%= f.select :persona_id, current_account.personas.collect { |p| [ p.title, p.id ] } %>
-    <%= submit_tag t(:choose_persona_submit) %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-3">
+        <%= f.label :persona_id, t(:persona_label) %>
+        <%= f.select :persona_id, current_account.personas.collect { |p| [ p.title, p.id ] }, {}, {:class => "form-control"} %>
+        <br />
+        <%= submit_tag t(:choose_persona_submit), :class => "btn btn-success" %>
+      </div>
+    </div>
   </div>
 
   <h3>
     <%=h site.persona.title %>
-    <span class="note">
+    <small>
       <%= link_to t(:edit_persona_link), edit_account_persona_path(site.persona, :return => params[:persona_id] ? url_for(:persona_id => params[:persona_id]) : nil) %> <%=t :or %>
       <%= link_to t(:create_new_persona_link), new_account_persona_path(:return => request.url) %>
-    </span>
+    </small>
   </h3>
 
-  <table cellspacing="0">
+  <table class="table table-striped table-hover">
     <tr>
       <th><%=t :property %></th>
       <th><%=t :value %></th>
@@ -35,8 +40,8 @@
       </tr>
     <% end %>
   </table>
-
+  <br />
   <div>
-    <%= submit_tag t(:update_release_policy_submit) %>
+    <%= submit_tag t(:update_release_policy_submit), :class => "btn btn-success" %>
   </div>
 <% end %>

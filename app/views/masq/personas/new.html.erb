@@ -1,9 +1,13 @@
 <h2><%=t :create_a_new_persona_title %></h2>
 <%= error_messages_for persona %>
 
-<%= form_for [:account, persona] do |f| %>
+<%= form_for [:account, persona], :html => {:class => 'form-horizontal'} do |f| %>
   <%= render :partial => 'form', :object => f %>
-  <div>
-    <%= f.submit 'create', :class => 'labelspace' %>
+  <br />
+  <div class="row">
+    <div class="col-sm-4">
+      <%= f.submit t(:create), :class => 'labelspace', :class => "btn btn-success" %>
+    </div>
   </div>
+  <br />
 <% end %>

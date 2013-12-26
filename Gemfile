@@ -17,9 +17,8 @@ group :development, :test do
   gem 'ruby_gntp'
   gem 'guard-minitest'
   gem 'rb-fsevent', :require => false
-
-  # rails 4 is still in beta not in rc
-  gem 'rails',     :github => 'rails/rails', :branch => 'master'
+  gem 'jquery-rails'
+  gem 'rails', '4.0.1'
   gem 'journey',   :github => 'rails/journey', :branch => 'master'
   gem 'arel',      :github => 'rails/arel', :branch => 'master'
 end
