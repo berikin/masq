@@ -2,14 +2,16 @@ es:
   # account controller
   thanks_for_signing_up_activation_link: Gracias por registrarte! Te hemos enviado un correo con un enlace para que actives tu cuenta.
   thanks_for_signing_up: Gracias por registrarte!
+  activation_link_resent: Te hemos mandado un correo con un enlace de activación.
   profile_updated: Tu perfil a sido actualizado.
   account_disabled: Tu cuenta a sido desabilitada.
   entered_password_is_wrong: La clave ingresada es incorrecta.
   account_activated_login_now: Tu cuenta ha sido activada - puedes entrar ahora.
   couldnt_find_account_with_code_create_new_one: "No pudimos encontrar una cuenta con ese código de activación, por favor crea una nueva."
   account_already_activated_please_login: Tu cuenta ya fué activada - por favor entra.
+  account_already_activated_or_missing: Tu cuenta ya fué activada o no existe.
   password_has_been_changed: Tu clave a sido modificada.
-  sorry_password_couldnt_be_changed: "Perdon, pero tu clave no pudo ser modificada."
+  sorry_password_couldnt_be_changed: Perdon, pero tu clave no pudo ser modificada.
   confirmation_of_new_password_invalid: La confirmación de la nueva clave es incorrecta.
   old_password_incorrect: Tu antigua clave es incorrecta.
   # account views
@@ -40,6 +42,12 @@ es:
 
   signup_title: Registro
   signup: Registro  # ???
+  resend_activation_email: volver a enviar correo de activación
+
+  # account mailer
+  please_activate_your_account: Por favor activa tu cuenta
+  your_request_for_a_new_password: Tu solicitud de nueva clave
+  activation_link: Enlace de activación
 
   # consumer controller
   immediate_request_failed_setup_needed: Petición inmediata fallida - hace falta una configuración
@@ -187,9 +195,10 @@ es:
 
   # sessions controller
   you_are_logged_in: Ahora estás dentro.
-  login_incorrect_or_account_not_yet_activated: El usuario es incorrecto o la cuenta no ha sido activada todavía.
+  account_not_yet_activated: La cuenta no ha sido activada todavía.
   login_incorrect: El usuario es incorrecto.
   you_are_now_logged_out: Has salido.
+  account_disabled: Tu cuenta está desactivada.
 
   # sessions views
   login_title: Usuario

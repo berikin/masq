@@ -9,9 +9,9 @@
   <li>
     <h3><%=h extract_host(site.url) %> <span class="note">(<%=h site.persona.title %>)</span></h3>
     <div class="options">
-       <%= link_to t(:edit_link), edit_account_site_path(site) %>
-       –
-       <%= link_to t(:delete_link), account_site_path(site), :data => { :confirm => t(:really_want_to_delete_trust_for_site, :site => h(extract_host(site.url))) }, :method => :delete %>
+      <%= link_to t(:edit_link), edit_account_site_path(site), :class => 'btn btn-primary btn-xs' %>
+      <%= button_to t(:delete_link), {:controller => :sites, :action => 'destroy', :id => site }, :confirm => t(:really_want_to_delete_trust_for_site, :site => h(extract_host(site.url))), :method => :delete, :class => 'btn btn-danger btn-xs' %>
+
     </div>
   </li>
   <% end %>
