@@ -58,7 +58,7 @@ GIT
 PATH
   remote: .
   specs:
-    masq (0.2.5)
+    masq (0.4.0)
       i18n_data
       rails (~> 4.0.0.beta)
       ruby-openid
